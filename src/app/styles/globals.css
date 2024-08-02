@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-primary: 25, 29, 31;
+  --background-secondary: 0, 0, 0;
+  --font-primary: #b8b8b8;
+}
+
+body {
+  color: var(--font-primary);
+  background: rgb(var(--background-primary));
+}
+
+h1 {
+  font-family: var(--font-museoslab-bold);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
