@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./styles/globals.css";
+import Sidebar from "@/components/Sidebar";
 
 const montserrat = localFont({
   src: "../../public/fonts/Montserrat-VariableFont_wght.ttf",
@@ -20,7 +21,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} ${museoSlab.variable}`}>{children}</body>
+      <body className={`flex ${montserrat.className} ${museoSlab.variable}`}>
+        <nav className="h-full w-fit flex-none">
+          <Sidebar />
+        </nav>
+        <main className="ml-8 mt-8 w-full grow">{children}</main>
+      </body>
     </html>
   );
 }
