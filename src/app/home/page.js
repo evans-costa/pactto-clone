@@ -1,8 +1,12 @@
+import Button from "@/components/Button";
+import Input from "@/components/Input";
+import Section from "@/components/Section";
 import Tag from "@/components/TagList/Tag";
+import AddIcon from "@mui/icons-material/Add";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-start">
+    <Section>
       <h1 className="mb-10 text-2xl text-white">
         Hey Evandro, welcome to Pactto!
       </h1>
@@ -72,6 +76,14 @@ export default function Home() {
           id={"mobile"}
         />
       </div>
-    </section>
+
+      <div className="mt-14 flex w-full flex-col">
+        <div className="mb-12 flex items-center justify-between">
+          <h2 className="text-4xl">My uploads</h2>
+          <Button icon={<AddIcon />} label="Upload new video" />
+        </div>
+        <Input />
+      </div>
+    </Section>
   );
 }
