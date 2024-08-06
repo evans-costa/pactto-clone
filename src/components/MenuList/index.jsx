@@ -9,7 +9,7 @@ export default function MenuList() {
 
   const listItems = menuData.map((item) => (
     <li
-      className={`px-7 py-4 ${pathname === item.path ? "bg-[#3a363f] text-yellow" : ""} hover:bg-[#3a363f] hover:text-yellow`}
+      className={`px-8 py-4 ${pathname === item.path ? "bg-[#3a363f] text-yellow" : ""} hover:bg-[#3a363f] hover:text-yellow`}
       key={item.id}>
       <Link href={item.path}>
         <span className="flex items-center gap-4">
