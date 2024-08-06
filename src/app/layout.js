@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import "./styles/globals.css";
+import "@/styles/globals.css";
 import Sidebar from "@/components/Sidebar";
 
 const montserrat = localFont({
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         <nav className="h-full w-fit flex-none">
           <Sidebar />
         </nav>
-        <main className="ml-8 mt-8 w-full grow">{children}</main>
+        <main className="mx-8 mt-8 w-full grow">{children}</main>
       </body>
     </html>
   );
