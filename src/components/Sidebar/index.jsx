@@ -4,7 +4,7 @@ import MenuList from "../MenuList";
 export default function Sidebar() {
   return (
     <div className="flex h-screen flex-col bg-gray-dark pt-10">
-      <div className="px-7">
+      <div className="px-8">
         <div className="flex flex-col">
           <Image
             src="/images/pactto-logo.svg"
@@ -17,23 +17,23 @@ export default function Sidebar() {
             Your Pactto Profile
           </p>
         </div>
-        <div className="mb-8 mt-10 flex gap-2">
+        <div className="mb-8 mt-10 flex w-full items-center gap-3">
           <Image
             src="/images/avatar-placeholder.png"
             height={40}
             width={40}
             alt="User avatar"
-            className="rounded-full"
+            className="w-auto rounded-full"
           />
-          <div className="gap-.5 flex flex-col text-[#CBCBCB]">
+          <div className="gap-.5 flex w-full flex-col text-[#CBCBCB]">
             <p className="text-[8px] font-bold uppercase">
               Trial: 12 days left
             </p>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-3/4 rounded-sm bg-yellow p-1 text-center text-xs uppercase text-black">
+            <div className="flex items-center gap-3">
+              <div className="rounded-sm bg-yellow p-1 text-center text-xs uppercase text-black">
                 Pactto Pro
               </div>
-              <p className="text-xs font-medium underline">upgrade</p>
+              <p className="text-end text-xs font-medium underline">upgrade</p>
             </div>
           </div>
         </div>
