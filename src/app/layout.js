@@ -22,10 +22,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`flex ${montserrat.className} ${museoSlab.variable}`}>
-        <nav className="h-full w-fit flex-none">
+        <nav className="mr-10 h-full w-fit flex-none">
           <Sidebar />
         </nav>
-        <main className="mx-8 mt-8 w-full grow">{children}</main>
+        <main className="w-full overflow-hidden">{children}</main>
       </body>
     </html>
   );

@@ -3,14 +3,15 @@ import Input from "@/components/Input";
 import Section from "@/components/Section";
 import Tag from "@/components/TagList/Tag";
 import AddIcon from "@mui/icons-material/Add";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Home() {
   return (
     <Section>
-      <h1 className="mb-10 text-2xl text-white">
+      <h1 className="my-10 text-2xl text-white">
         Hey Evandro, welcome to Pactto!
       </h1>
-      <div className="flex flex-col gap-4">
+      <div className="mr-10 flex flex-col gap-4">
         <Tag text={"Open your inbox and verify your email"} isDone={false} />
         <Tag
           text={
@@ -77,12 +78,21 @@ export default function Home() {
         />
       </div>
 
-      <div className="mt-14 flex w-full flex-col">
+      <div className="mt-14 flex w-full flex-col pr-10">
         <div className="mb-12 flex items-center justify-between">
           <h2 className="text-4xl">My uploads</h2>
-          <Button icon={<AddIcon />} label="Upload new video" />
+          <Button
+            type={"button"}
+            icon={<AddIcon />}
+            label="Upload new video"
+            background={"yellow"}
+          />
         </div>
-        <Input />
+        <Input
+          icon={<SearchIcon className="h-7 w-7 text-white" />}
+          placeholder={"Search"}
+          id="search"
+        />
       </div>
     </Section>
   );
