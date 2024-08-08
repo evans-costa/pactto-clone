@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint:prettier:check": "prettier . --check",
     "lint:prettier:write": "prettier . --write",
-    "prepare": "husky && git config --local include.path .husky/.gitconfig",
+    "prepare": "husky && git config --local core.editor cat",
     "cm": "cz"
   },
   "dependencies": {
