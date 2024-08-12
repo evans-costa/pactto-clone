@@ -8,14 +8,14 @@ export default function PersonalInfo() {
       <div className="sticky top-6 flex w-full justify-end gap-4 pr-8">
         <Button
           label={"Reset Changes"}
-          background={"gray"}
+          background={"bg-gray"}
           type={"reset"}
           form={"personal-info"}
         />
         <Button
           type={"submit"}
           label={"Save Changes"}
-          background={"yellow"}
+          background={"bg-yellow"}
           form={"personal-info"}
         />
       </div>

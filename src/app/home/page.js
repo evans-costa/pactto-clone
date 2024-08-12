@@ -1,5 +1,5 @@
 import Button from "@/components/Button";
-import Input from "@/components/Input";
+import InputField from "@/components/InputField";
 import Section from "@/components/Section";
 import Tag from "@/components/TagList/Tag";
 import AddIcon from "@mui/icons-material/Add";
@@ -85,13 +85,14 @@ export default function Home() {
             type={"button"}
             icon={<AddIcon />}
             label="Upload new video"
-            background={"yellow"}
+            background={"bg-yellow"}
           />
         </div>
-        <Input
+        <InputField
           icon={<SearchIcon className="h-7 w-7 text-white" />}
           placeholder={"Search"}
           id="search"
+          isLabelled={false}
         />
       </div>
     </Section>
