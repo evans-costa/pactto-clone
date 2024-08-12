@@ -1,9 +1,10 @@
-export default function Button({ background, ...props }) {
+export default function Button({ ...props }) {
   return (
     <button
       type={props.type}
       form={props.form}
-      className={`rounded-3xl bg-${background} px-6 py-4 text-base uppercase`}>
+      disabled={props.disabled}
+      className={`rounded-3xl ${props.background} px-5 py-3 text-base uppercase ${props.disabled ? "disabled:opacity-20" : ""}`}>
       <span className="flex items-center justify-center gap-2">
         {props.icon ? props.icon : ""} {props.label}
       </span>
