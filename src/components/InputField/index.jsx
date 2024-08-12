@@ -1,11 +1,17 @@
-export default function Input({ icon, ...props }) {
+export default function InputField({ icon, label, isLabelled, ...props }) {
   return (
     <>
-      <label className="sr-only" htmlFor={props.id}></label>
       <div className="relative">
         <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center pe-4">
           {icon ? icon : null}
         </div>
+        {label && (
+          <label
+            className={`${isLabelled ? "text-center text-sm text-white" : "sr-only"}`}
+            htmlFor={props.id}>
+            {label}
+          </label>
+        )}
         <input
           id={props.id}
           placeholder={props.placeholder}
