@@ -1,18 +1,24 @@
 import Image from "next/image";
+import Link from "next/link";
+
 import MenuList from "../MenuList";
+import Button from "../Button";
 
 export default function Sidebar() {
   return (
     <div className="flex h-screen flex-col bg-gray-dark pt-10">
-      <div className="px-8">
+      <div className="pl-8">
         <div className="flex flex-col">
-          <Image
-            src="/images/pactto-logo.svg"
-            height={43}
-            width={140}
-            className="h-1/3 w-2/3"
-            alt="Pactto logo icon"
-          />
+          <Link href="/home">
+            <Image
+              priority
+              src="/images/pactto-logo.svg"
+              height={43}
+              width={140}
+              className="h-1/3 w-2/3"
+              alt="Pactto logo icon"
+            />
+          </Link>
           <p className="mt-4 text-sm uppercase text-[#545454]">
             Your Pactto Profile
           </p>
@@ -43,6 +49,9 @@ export default function Sidebar() {
         </div>
       </div>
       <MenuList />
+      <div className="mt-10 flex w-full items-center justify-center">
+        <Button label={"Logout"} background={"bg-gray"} />
+      </div>
     </div>
   );
 }
