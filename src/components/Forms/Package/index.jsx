@@ -18,7 +18,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import FormInput from "../FormInput";
 import Button from "@/components/Button";
 
-export default function PackageForm() {
+export default function PackageForm({ id, handleDelete }) {
   const [selectedCurrency, setSelectedCurrency] = useState(currencies[0]);
 
   function handleSelectChange(event) {
@@ -26,7 +26,9 @@ export default function PackageForm() {
   }
 
   return (
-    <form id="package-info" className="mr-10 w-full">
+    <form
+      id={`package-info-${id}`}
+      className="mt-6 flex w-full flex-col gap-4 pr-10">
       <div className="flex w-full flex-col">
         <div className="flex items-start gap-6">
           <Field className="flex items-center gap-2">
@@ -37,12 +39,15 @@ export default function PackageForm() {
               <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-6" />
             </Switch>
           </Field>
-          <button className="text-sm font-medium text-gray">
+          <button
+            type="button"
+            onClick={() => handleDelete(id)}
+            className="text-sm font-medium text-gray">
             Delete package <DeleteIcon />
           </button>
         </div>
       </div>
-      <div className="my-10 flex gap-12 border border-yellow bg-neutral-950 px-12 py-10">
+      <div className="flex gap-12 border border-yellow bg-neutral-950 px-12 py-10">
         <div className="flex w-full flex-1 flex-col items-center gap-10">
           <span className="inline-flex h-fit w-full flex-col border-b-2 border-b-yellow pb-2">
             <h4 className="text-center text-sm text-white">
@@ -59,17 +64,17 @@ export default function PackageForm() {
                 label={"Package Name"}
                 isLabelled={true}
                 placeholder={"Title"}
-                id={"title"}
+                id={`title-${id}`}
               />
             </div>
             <div className="flex w-full flex-col items-start gap-2">
               <label
                 className="text-center text-sm text-white"
-                htmlFor="description">
+                htmlFor={`description-${id}`}>
                 Package Description
               </label>
               <textarea
-                id="description"
+                id={`description-${id}`}
                 placeholder="Description"
                 className="max-h-full w-full rounded-md border-none bg-white/10 p-3 text-base font-medium text-white/80 outline-0 placeholder:text-base placeholder:text-white/50 hover:bg-white/20 focus:bg-white/30 focus:outline-none focus:ring-0"
               />
@@ -79,7 +84,7 @@ export default function PackageForm() {
                 label={"Package details (user will view only)"}
                 isLabelled={true}
                 placeholder={"Add details"}
-                id={"details"}
+                id={`details-${id}`}
               />
             </div>
             <div className="flex w-full flex-col items-start gap-2">
@@ -87,7 +92,7 @@ export default function PackageForm() {
                 label={"Package instructions (customers will view too)"}
                 isLabelled={true}
                 placeholder={"Add Instructions"}
-                id={"instructions"}
+                id={`instructions-${id}`}
               />
             </div>
           </div>
@@ -106,42 +111,42 @@ export default function PackageForm() {
             <div className="flex w-full flex-col items-start gap-4">
               <label
                 className="text-center text-sm text-white"
-                htmlFor="description">
+                htmlFor={`description-${id}`}>
                 Review type
               </label>
               <ul className="ml-3 flex w-full flex-col gap-6">
                 <li className="flex items-center justify-start gap-4">
                   <input
                     type="radio"
-                    id="file-review"
-                    name="review"
+                    id={`file-review-${id}`}
+                    name={`review-${id}`}
                     className="h-5 w-5 border-2 border-gray bg-transparent text-gray checked:text-yellow focus:ring-2 focus:ring-yellow focus:ring-offset-0"></input>
                   <label
-                    htmlFor="file-review"
+                    htmlFor={`file-review-${id}`}
                     className="text-sm font-medium text-gray">
                     Single file review (e.g. video, image, or PDF)
                   </label>
                 </li>
                 <li className="flex items-center justify-start gap-4">
                   <input
-                    id="link-review"
+                    id={`link-review-${id}`}
                     type="radio"
-                    name="review"
+                    name={`review-${id}`}
                     className="h-5 w-5 border-2 border-gray bg-transparent text-gray checked:text-yellow focus:ring-2 focus:ring-yellow focus:ring-offset-0"></input>
                   <label
-                    htmlFor="link-review"
+                    htmlFor={`link-review-${id}`}
                     className="text-sm font-medium text-gray">
                     Single link review (e.g. LinkedIn URL, portfolio)
                   </label>
                 </li>
                 <li className="flex items-center justify-start gap-4">
                   <input
-                    id="multiple-review"
+                    id={`multiple-review-${id}`}
                     type="radio"
-                    name="review"
+                    name={`review-${id}`}
                     className="h-5 w-5 border-2 border-gray bg-transparent text-gray checked:text-yellow focus:ring-2 focus:ring-yellow focus:ring-offset-0"></input>
                   <label
-                    htmlFor="multiple-review"
+                    htmlFor={`multiple-review-${id}`}
                     className="text-sm font-medium text-gray">
                     Single review of multiple files (e.g. 2 videos and 1 image,
                     reviewed together)
@@ -152,42 +157,42 @@ export default function PackageForm() {
             <div className="flex w-full flex-col items-start gap-4">
               <label
                 className="text-center text-sm text-white"
-                htmlFor="description">
+                htmlFor={`description-${id}`}>
                 Review file type
               </label>
               <ul className="ml-3 flex w-full gap-6">
                 <li className="flex items-center justify-start gap-4">
                   <input
                     type="radio"
-                    id="video-review"
-                    name="review-type"
+                    id={`video-review-${id}`}
+                    name={`review-type-${id}`}
                     className="h-5 w-5 border-2 border-gray bg-transparent text-gray checked:text-yellow focus:ring-2 focus:ring-yellow focus:ring-offset-0"></input>
                   <label
-                    htmlFor="video-review"
+                    htmlFor={`video-review-${id}`}
                     className="text-sm font-medium text-gray">
                     Video
                   </label>
                 </li>
                 <li className="flex items-center justify-start gap-4">
                   <input
-                    id="image-review"
+                    id={`image-review-${id}`}
                     type="radio"
-                    name="review-type"
+                    name={`review-type-${id}`}
                     className="h-5 w-5 border-2 border-gray bg-transparent text-gray checked:text-yellow focus:ring-2 focus:ring-yellow focus:ring-offset-0"></input>
                   <label
-                    htmlFor="image-review"
+                    htmlFor={`image-review-${id}`}
                     className="text-sm font-medium text-gray">
                     Image
                   </label>
                 </li>
                 <li className="flex items-center justify-start gap-4">
                   <input
-                    id="file-review"
+                    id={`pdf-review-${id}`}
                     type="radio"
-                    name="review-type"
+                    name={`review-type-${id}`}
                     className="h-5 w-5 border-2 border-gray bg-transparent text-gray checked:text-yellow focus:ring-2 focus:ring-yellow focus:ring-offset-0"></input>
                   <label
-                    htmlFor="file-review"
+                    htmlFor={`pdf-review-${id}`}
                     className="text-sm font-medium text-gray">
                     File (PDF, .txt, etc.)
                   </label>
@@ -260,7 +265,9 @@ export default function PackageForm() {
               </Listbox>
             </div>
             <div className="flex w-full items-center justify-between">
-              <label className="w-full text-sm text-white" htmlFor="cost">
+              <label
+                className="w-full text-sm text-white"
+                htmlFor={`cost-${id}`}>
                 Package Cost
               </label>
               <div className="flex w-fit flex-auto items-center justify-end gap-8">
@@ -268,7 +275,7 @@ export default function PackageForm() {
                 <input
                   step="0.1"
                   type="number"
-                  id="cost"
+                  id={`cost-${id}`}
                   placeholder="$ 100.00"
                   className="w-full rounded-md border-none bg-white/10 p-3 text-base font-medium text-white/80 outline-0 placeholder:text-base placeholder:text-white/50 hover:bg-white/20 focus:bg-white/30 focus:outline-none focus:ring-0"></input>
               </div>
@@ -281,13 +288,13 @@ export default function PackageForm() {
           <div className="flex w-full items-center justify-between">
             <label
               className="w-1/2 text-sm font-medium text-gray"
-              htmlFor="credits">
+              htmlFor={`credits-${id}`}>
               Number of reviews (credits) in this package View video explanation
             </label>
             <input
               step="0.1"
               type="number"
-              id="credits"
+              id={`credits-${id}`}
               placeholder=""
               className="w-1/5 rounded-md border-none bg-white/10 p-3 text-base font-medium text-white/80 outline-0 placeholder:text-base placeholder:text-white/50 hover:bg-white/20 focus:bg-white/30 focus:outline-none focus:ring-0"></input>
           </div>
