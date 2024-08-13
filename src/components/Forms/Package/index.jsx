@@ -13,6 +13,7 @@ import {
 } from "@headlessui/react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import CheckIcon from "@mui/icons-material/Check";
 
 import FormInput from "../FormInput";
 import Button from "@/components/Button";
@@ -244,11 +245,14 @@ export default function PackageForm() {
                     <ListboxOption
                       key={currency.id}
                       value={currency}
-                      className="group relative cursor-pointer select-none p-3 text-white/80 data-[focus]:bg-white/10 data-[focus]:text-white">
-                      <div className="flex items-center">
-                        <span className="block truncate font-medium group-data-[selected]:font-semibold">
+                      className="group relative cursor-pointer select-none p-3 text-white/80 data-[focus]:bg-white/10 data-[selected]:bg-white/10 data-[focus]:text-white">
+                      <div className="flex items-center justify-between">
+                        <span className="group-data-[selected] flex items-center justify-between truncate font-medium group-data-[selected]:text-yellow">
                           {currency.name}
                         </span>
+                        <div className="invisible group-data-[selected]:visible group-data-[selected]:text-yellow">
+                          <CheckIcon />
+                        </div>
                       </div>
                     </ListboxOption>
                   ))}
@@ -284,7 +288,7 @@ export default function PackageForm() {
               step="0.1"
               type="number"
               id="credits"
-              placeholder="$ 100.00"
+              placeholder=""
               className="w-1/5 rounded-md border-none bg-white/10 p-3 text-base font-medium text-white/80 outline-0 placeholder:text-base placeholder:text-white/50 hover:bg-white/20 focus:bg-white/30 focus:outline-none focus:ring-0"></input>
           </div>
           <p className="w-1/2 text-center text-sm font-medium text-gray">
