@@ -81,12 +81,17 @@ export default function Home() {
       <div className="mt-14 flex w-full flex-col pr-10">
         <div className="mb-12 flex items-center justify-between">
           <h2 className="text-4xl">My uploads</h2>
-          <Button
-            type={"button"}
-            icon={<AddIcon />}
-            label="Upload new video"
-            background={"bg-yellow"}
-          />
+          <label
+            htmlFor="video"
+            className="flex w-fit cursor-pointer items-center justify-center gap-2 rounded-full bg-yellow px-5 py-3 text-base font-bold uppercase text-gray-dark">
+            <AddIcon /> Upload New Video
+            <input
+              type="file"
+              accept="video/mp4,video/x-m4v,video/*"
+              name="video"
+              id="video"
+              hidden></input>
+          </label>
         </div>
         <InputField
           icon={<SearchIcon className="h-7 w-7 text-white" />}
