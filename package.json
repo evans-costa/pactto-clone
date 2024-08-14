@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint:eslint:check": "next lint --dir .",
     "lint:prettier:check": "prettier . --check",
     "lint:prettier:write": "prettier . --write",
     "prepare": "husky && git config --local core.editor cat",
