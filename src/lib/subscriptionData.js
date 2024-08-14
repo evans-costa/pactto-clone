@@ -10,17 +10,17 @@ export const subscriptionsData = [
   {
     id: 3,
     text: (
-      <>
+      <span>
         Max screen recording duration on Pactto Desktop: <b>unlimited</b>
-      </>
+      </span>
     ),
   },
   {
     id: 4,
     text: (
-      <>
+      <span>
         Max review duration on mobile: <b>unlimited</b>
-      </>
+      </span>
     ),
   },
   {
@@ -50,16 +50,16 @@ export const subscriptionsData = [
   {
     id: 11,
     text: (
-      <>
+      <span className="text-wrap">
         <a
           href="https://pactto.mintlify.app/introduction"
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:text-yellow">
           Integrate Pactto to your website
-        </a>
+        </a>{" "}
         so anyone can send, and pay, for your video feedback
-      </>
+      </span>
     ),
   },
   {
