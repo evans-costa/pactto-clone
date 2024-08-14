@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
 import MenuList from "../MenuList";
 import Button from "../Button";
+import UpdgradeDialog from "../UpgradeDialog";
 
 export default function Sidebar() {
   return (
@@ -39,7 +41,11 @@ export default function Sidebar() {
               <div className="rounded-sm bg-yellow p-1 text-center text-xs uppercase text-black">
                 Pactto Pro
               </div>
-              <p className="text-end text-xs font-medium underline">upgrade</p>
+              <UpdgradeDialog>
+                <p className="text-end text-xs font-medium underline">
+                  upgrade
+                </p>
+              </UpdgradeDialog>
             </div>
           </div>
         </div>
