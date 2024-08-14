@@ -25,7 +25,7 @@ Esse site foi construído com os seguintes pacotes / tecnologias:
 
 ## Demonstração
 
-Insira um gif ou um link de alguma demonstração
+![exemplo](https://github.com/user-attachments/assets/eb1981eb-480f-44e3-895a-3bed86e6767c)
 
 ## Rodando localmente
 
