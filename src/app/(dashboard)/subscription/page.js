@@ -1,5 +1,5 @@
-import Button from "@/components/Button";
 import Section from "@/components/Section";
+import UpdgradeDialog from "@/components/UpgradeDialog";
 import { subscriptionsData } from "@/lib/subscriptionData";
 
 import CheckIcon from "@mui/icons-material/Check";
@@ -15,11 +15,7 @@ export default function Subscription() {
             <b className="text-gray-light"> 1 days left</b>
           </p>
           <div className="w-full">
-            <Button
-              type={"button"}
-              background={"bg-gray"}
-              label={"Subscribe to pactto Pro"}
-            />
+            <UpdgradeDialog button label={"Subscribe to Pactto Pro"} />
           </div>
           <p className="text-base font-medium text-gray">
             The PACTTO PRO subscription allows you to:

@@ -41,7 +41,7 @@ export default function Packages() {
           />
           <Button
             label={"Payment Details"}
-            background={"bg-green"}
+            background={"bg-green-light"}
             form={"package-info"}
           />
         </div>
